@@ -412,16 +412,17 @@
       </div>
       <Carousel v-model="stateSlide" ref="carouselRef" :items-to-show="1" :wrap-around="true" :autoplay="true"
         :autoplayTimeout="4000" :transition="2500" :mouse-drag="true" :pauseAutoplayOnHover="true" :wheelControl="true"
-        class="timeline-frame">
+        class="timeline-frame max-w-full px-2 sm:px-4">
         <Slide v-for="(item, index) in timelinecard" :key="index">
           <div class="relative timelinesub-card">
             <div class="timeline-sec block relative">
               <a href="#" class="block">
                 <img :src="item.image" :alt="item.title"
-                  class="!max-w-none object-cover xl:h-30 xl:w-30 rounded-lg mx-auto" loading="lazy" />
-                <div class="overlay-content absolute inset-0 rounded-lg pr-9 pt-11 text-white">
-                  <div class="absolute bottom-6 right-0 mr-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                  class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl object-cover rounded-lg mx-auto"
+                  loading="lazy" />
+                <div class="overlay-content absolute inset-0 rounded-lg pr-4 pt-6 text-white">
+                  <div class="absolute bottom-4 right-4">
+                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
                       viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -430,46 +431,62 @@
               </a>
             </div>
 
+            <!-- Content block -->
             <div
-              class="timeline-content w-full cursor-pointer bg-white rounded m-2 transition-all duration-300 ease-in-out hover:bg-primarycolor hover:shadow-lg hover:text-white group">
-              <h3 class="mb-4 text-primarycolor group-hover:text-white">{{ item.overlayTitle }}</h3>
+              class="timeline-content w-full cursor-pointer bg-white rounded m-2 transition-all duration-300 ease-in-out hover:bg-primarycolor hover:shadow-lg hover:text-white group p-4 sm:p-6">
+              <h3 class="mb-2 text-base sm:text-lg text-primarycolor group-hover:text-white">{{ item.overlayTitle }}
+              </h3>
               <p
-                class="text-primarycolor font-[400] border-l-2 border-orange-400 pl-3 mb-10 pr-3 group-hover:text-white">
+                class="text-sm sm:text-base text-primarycolor font-[400] border-l-2 border-orange-400 pl-3 pr-3 mb-6 group-hover:text-white">
                 {{ item.overlayparagraph }}
               </p>
             </div>
 
-            <div class="view-btn absolute bottom-6 right-0 mr-6">
-              <svg class="w-8 h-8 text-primarycolor group-hover:text-white transition-colors duration-300" fill="none"
-                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <!-- Arrow Button -->
+            <div class="view-btn absolute bottom-4 right-4">
+              <svg class="w-6 h-6 sm:w-8 sm:h-8 text-primarycolor group-hover:text-white transition-colors duration-300"
+                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </div>
-
           </div>
         </Slide>
       </Carousel>
-      <div class="relative flex justify-between items-center mt-8 px-6">
+
+      <div class="relative flex flex-wrap justify-between items-center mt-6 px-2 sm:px-6 gap-y-4">
         <div class="absolute top-1/2 left-0 right-0 h-[2px] bg-gray-300 z-0"></div>
-        <div v-for="(yearItem, index) in timelineYears" :key="index" class="relative z-10 text-center">
-          <div class="w-4 h-4 rounded-full mx-2 transition-all duration-300"
-            :class="index === stateSlide ? 'bg-orange-600 scale-125' : 'bg-white'"></div>
-          <p class="text-sm mt-2 transition-colors duration-300"
+
+        <div v-for="(yearItem, index) in timelineYears" :key="index"
+          class="relative z-10 text-center flex flex-col items-center w-[14%] sm:w-auto"
+          @mouseenter="hoveredYearIndex = index" @mouseleave="hoveredYearIndex = null">
+          <div class="w-4 h-4 rounded-full mx-2 transition-all duration-300 border"
+            :class="index === stateSlide ? 'bg-orange-600 scale-125' : 'bg-white border-gray-400'"></div>
+
+          <p class="text-xs sm:text-sm mt-2 transition-colors duration-300"
             :class="index === stateSlide ? 'text-orange-600 font-bold' : 'text-white'">
             {{ yearItem.year }}
           </p>
+
+          <!-- Preview Image on Hover -->
+          <div v-if="hoveredYearIndex === index"
+            class="absolute -top-24 sm:-top-28 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 h-16 sm:h-20 rounded-full overflow-hidden border-2 border-white shadow-lg z-20 transition duration-300">
+            <img :src="timelinecard[index]?.image" alt="Preview"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-300" />
+          </div>
         </div>
       </div>
 
 
-      <div class="flex justify-center gap-4 mb-6">
-        <button @click="carouselRef?.prev()" class="text-white px-4 py-2  rounded">
+
+      <div class="flex justify-center gap-3 sm:gap-4 mb-6 px-2">
+        <button @click="carouselRef?.prev()" class="text-white bg-primarycolor px-3 py-2 rounded text-sm sm:text-base">
           Prev
         </button>
-        <button @click="carouselRef?.next()" class="text-white px-4 py-2  rounded">
+        <button @click="carouselRef?.next()" class="text-white bg-primarycolor px-3 py-2 rounded text-sm sm:text-base">
           Next
         </button>
       </div>
+
     </div>
   </div>
 
@@ -746,6 +763,7 @@ import { onMounted, onBeforeUnmount } from "vue";
 import {
   slides,
   currentSlide,
+  hoveredYearIndex,
   stateSlide,
   nextSlide,
   prevSlide,

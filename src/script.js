@@ -10,17 +10,18 @@ import $ from "jquery";
 
 
 export const slides = ref([{
-        title: "Quality You Can Build On",
-        subtitle: "Constructions & Mining",
-        image: "/src/assets/home/banner-img-1.png",
-    },
-    {
-        title: "Engineering Excellence",
-        subtitle: "Manufacturing & Fabrication",
-        image: "/src/assets/home/engineers-working.jpg",
-    },
+    title: "Quality You Can Build On",
+    subtitle: "Constructions & Mining",
+    image: "/src/assets/home/banner-img-1.png",
+},
+{
+    title: "Engineering Excellence",
+    subtitle: "Manufacturing & Fabrication",
+    image: "/src/assets/home/engineers-working.jpg",
+},
 ]);
 export const stateSlide = ref(0);
+export const hoveredYearIndex = ref(null)
 
 // Function to go to the next slide
 export const nextSlide = () => {
@@ -131,8 +132,8 @@ export const useCounterAnimation = () => {
                     observer.disconnect(); // Stop observing after animation starts
                 }
             }, {
-                threshold: 0.25,
-            }
+            threshold: 0.25,
+        }
         );
 
         if (counterSection.value) {
@@ -154,58 +155,58 @@ export const useCounterAnimation = () => {
 // ==============================
 
 export const businesses = [{
-        title: "Civil Construction & MEP",
-        image: "/src/assets/home/Civil-Construction.png",
-        routeName: "BusinessPage",
-    },
-    {
-        title: "Mechanical Electrical & Plumbing",
-        image: "/src/assets/home/Mechanical-Electrical.png",
-    },
-    {
-        title: "Oil & Gas",
-        image: "/src/assets/home/gas-oil.png",
-    },
-    {
-        title: "Roads & Infrastructure",
-        image: "/src/assets/home/Roads-Infrastructure.png",
-    },
-    {
-        title: "Mining & Quarrying",
-        image: "/src/assets/home/Mining-Quarrying.png",
-    },
-    {
-        title: "Marble & Industrial Minerals",
-        image: "/src/assets/home/Marble-Industrial.png",
-    },
-    {
-        title: "Manufacturing & Fabrication",
-        image: "/src/assets/home/Manufacturing-Fabrication.png",
-    },
-    {
-        title: "Dry Mix & Crusher",
-        image: "/src/assets/home/DryMix-Crusher.png",
-    },
-    {
-        title: "Aluminium & Glass",
-        image: "/src/assets/home/Aluminium-Glass.png",
-    },
-    {
-        title: "Carpentry Interior Design & Fitout",
-        image: "/src/assets/home/Carpentry-Interior.png",
-    },
-    {
-        title: "GRC & Marble",
-        image: "/src/assets/home/GRC-Marble.png",
-    },
-    {
-        title: "Product Dealership & Trading",
-        image: "/src/assets/home/Product-Dealership.png",
-    },
-    {
-        title: "Catering and Facility Management",
-        image: "/src/assets/home/Catering-Facility.png",
-    },
+    title: "Civil Construction & MEP",
+    image: "/src/assets/home/Civil-Construction.png",
+    routeName: "BusinessPage",
+},
+{
+    title: "Mechanical Electrical & Plumbing",
+    image: "/src/assets/home/Mechanical-Electrical.png",
+},
+{
+    title: "Oil & Gas",
+    image: "/src/assets/home/gas-oil.png",
+},
+{
+    title: "Roads & Infrastructure",
+    image: "/src/assets/home/Roads-Infrastructure.png",
+},
+{
+    title: "Mining & Quarrying",
+    image: "/src/assets/home/Mining-Quarrying.png",
+},
+{
+    title: "Marble & Industrial Minerals",
+    image: "/src/assets/home/Marble-Industrial.png",
+},
+{
+    title: "Manufacturing & Fabrication",
+    image: "/src/assets/home/Manufacturing-Fabrication.png",
+},
+{
+    title: "Dry Mix & Crusher",
+    image: "/src/assets/home/DryMix-Crusher.png",
+},
+{
+    title: "Aluminium & Glass",
+    image: "/src/assets/home/Aluminium-Glass.png",
+},
+{
+    title: "Carpentry Interior Design & Fitout",
+    image: "/src/assets/home/Carpentry-Interior.png",
+},
+{
+    title: "GRC & Marble",
+    image: "/src/assets/home/GRC-Marble.png",
+},
+{
+    title: "Product Dealership & Trading",
+    image: "/src/assets/home/Product-Dealership.png",
+},
+{
+    title: "Catering and Facility Management",
+    image: "/src/assets/home/Catering-Facility.png",
+},
 ];
 
 // ==============================
@@ -213,17 +214,17 @@ export const businesses = [{
 // ==============================
 
 export const projects = ref([{
-        title: "Sultan Qaboos Grand Mosque Muscat",
-        image: "/src/assets/home/GRAND-MOSQUE.png",
-    },
-    {
-        title: "Al Mouj Muscat",
-        image: "/src/assets/home/muscut.png",
-    },
-    {
-        title: "Omantel Head Quarters Building Muscat",
-        image: "/src/assets/home/omantal.png",
-    },
+    title: "Sultan Qaboos Grand Mosque Muscat",
+    image: "/src/assets/home/GRAND-MOSQUE.png",
+},
+{
+    title: "Al Mouj Muscat",
+    image: "/src/assets/home/muscut.png",
+},
+{
+    title: "Omantel Head Quarters Building Muscat",
+    image: "/src/assets/home/omantal.png",
+},
 ]);
 
 // ==============================
@@ -275,77 +276,77 @@ export const projects = ref([{
 // Timeline cards data
 
 export const timelinecard = [{
-        image: "./src/assets/home/palace.png",
-        overlayTitle: "Early Growth & Expansion",
-        overlayparagraph: "With determination and a clear vision, theWith determination and a clear vision, the company expa company expaWith determination and a clear vision, the company expanded...",
-        title: "2021 — Growing Up",
-        description: "Some description With determination With determination and a clear vision, the company expa and a clear vision, the company expaabout this year...",
-        link: "#",
-        year:"1942"
-    },
-    {
-        image: "./src/assets/home/beginning.png",
-        overlayTitle: "1942 – The Beginning",
-        overlayparagraph: "With determination and a clear vision, the company expanded beyond its modest roots, steadily growing in size and capabiliWith determination and a clear vision, the company expaties.",
-        title: "2020 — The Beginning",
-        description: "Some description about this year...",
-        link: "#",
-        year:"2021"
-    },
-    {
-        image: "./src/assets/home/beginning.png",
-        overlayTitle: "Early Growth & Expansion",
-        overlayparagraph: "With determination and a clear vision, the companyWith determination and a clear vision, the company expa expanded...",
-        title: "2021 — Growing Up",
-        description: "Some description about this year...",
-        link: "#",
-        year:"2022"
-    },
-    {
-        image: "./src/assets/home/beginning.png",
-        overlayTitle: "Early Growth & Expansion",
-        overlayparagraph: "With determinaWith determination and a clear vision, the company expaWith determination and a clear vision, the company expation and a clear vision, the company expanded...",
-        title: "2021 — Growing Up",
-        description: "Some description about thWith determination and a clear vision, the company expaWith determination and a clear vision, the company expais year...",
-        link: "#",
-        year:"2023"
-    },
-    {
-        image: "./src/assets/home/palace.png",
-        overlayTitle: "Early Growth & Expansion",
-        overlayparagraph: "With determination and a clear vision, the company expanded...",
-        title: "2021 — Growing Up",
-        description: "Some description about this year...",
-        link: "#",
-        year:"2024"
-    },
-    { 
-        image: "./src/assets/home/palace.png",
-        overlayTitle: "Early Growth & Expansion",
-        overlayparagraph: "With determination and With determination and a clear vision, the company expaWith determination and a clear vision, the company expaa clear vision, the company expanded...",
-        title: "2021 — Growing Up",
-        description: "Some description about this yeaWith determination and a clear vision, the company expaWith determination and a clear vision, the company expar...",
-        link: "#",
-        year:"2024"
-    },
-    {
-        image: "./src/assets/home/palace.png",
-        overlayTitle: "Early Growth & Expansion",
-        overlayparagraph: "With determination and a clear vision, the With determination and a clear vision, the company expaWith determination and a clear vision, the company expacompany expanded...",
-        title: "2021 — Growing Up",
-        description: "Some description about this yeaWith determination and a clear vision, the company expaWith determination and a clear vision, the company expar...",
-        link: "#",
-        year:"2024"
-    },
-    {
-        image: "./src/assets/home/palace.png",
-        overlayTitle: "Early Growth & Expansion",
-        overlayparagraph: "With determination and a clear visWith determination and a clear vision, the company expaWith determination and a clear vision, the company expaion, the company expanded...",
-        title: "2021 — Growing Up",
-        description: "Some description about this yWith determination and a clear vision, the company expaWith determination and a clear vision, the company expaear...",
-        link: "#",
-        year:"2024"
-    },
+    image: "./src/assets/home/palace.png",
+    overlayTitle: "Early Growth & Expansion",
+    overlayparagraph: "With determination and a clear vision, theWith determination and a clear vision, the company expa company expaWith determination and a clear vision, the company expanded...",
+    title: "2021 — Growing Up",
+    description: "Some description With determination With determination and a clear vision, the company expa and a clear vision, the company expaabout this year...",
+    link: "#",
+    year: "1942"
+},
+{
+    image: "./src/assets/home/beginning.png",
+    overlayTitle: "1942 – The Beginning",
+    overlayparagraph: "With determination and a clear vision, the company expanded beyond its modest roots, steadily growing in size and capabiliWith determination and a clear vision, the company expaties.",
+    title: "2020 — The Beginning",
+    description: "Some description about this year...",
+    link: "#",
+    year: "2021"
+},
+{
+    image: "./src/assets/home/beginning.png",
+    overlayTitle: "Early Growth & Expansion",
+    overlayparagraph: "With determination and a clear vision, the companyWith determination and a clear vision, the company expa expanded...",
+    title: "2021 — Growing Up",
+    description: "Some description about this year...",
+    link: "#",
+    year: "2022"
+},
+{
+    image: "./src/assets/home/beginning.png",
+    overlayTitle: "Early Growth & Expansion",
+    overlayparagraph: "With determinaWith determination and a clear vision, the company expaWith determination and a clear vision, the company expation and a clear vision, the company expanded...",
+    title: "2021 — Growing Up",
+    description: "Some description about thWith determination and a clear vision, the company expaWith determination and a clear vision, the company expais year...",
+    link: "#",
+    year: "2023"
+},
+{
+    image: "./src/assets/home/palace.png",
+    overlayTitle: "Early Growth & Expansion",
+    overlayparagraph: "With determination and a clear vision, the company expanded...",
+    title: "2021 — Growing Up",
+    description: "Some description about this year...",
+    link: "#",
+    year: "2024"
+},
+{
+    image: "./src/assets/home/palace.png",
+    overlayTitle: "Early Growth & Expansion",
+    overlayparagraph: "With determination and With determination and a clear vision, the company expaWith determination and a clear vision, the company expaa clear vision, the company expanded...",
+    title: "2021 — Growing Up",
+    description: "Some description about this yeaWith determination and a clear vision, the company expaWith determination and a clear vision, the company expar...",
+    link: "#",
+    year: "2024"
+},
+{
+    image: "./src/assets/home/palace.png",
+    overlayTitle: "Early Growth & Expansion",
+    overlayparagraph: "With determination and a clear vision, the With determination and a clear vision, the company expaWith determination and a clear vision, the company expacompany expanded...",
+    title: "2021 — Growing Up",
+    description: "Some description about this yeaWith determination and a clear vision, the company expaWith determination and a clear vision, the company expar...",
+    link: "#",
+    year: "2024"
+},
+{
+    image: "./src/assets/home/palace.png",
+    overlayTitle: "Early Growth & Expansion",
+    overlayparagraph: "With determination and a clear visWith determination and a clear vision, the company expaWith determination and a clear vision, the company expaion, the company expanded...",
+    title: "2021 — Growing Up",
+    description: "Some description about this yWith determination and a clear vision, the company expaWith determination and a clear vision, the company expaear...",
+    link: "#",
+    year: "2024"
+},
 ];
 
 // Timeline years data
@@ -363,7 +364,7 @@ export const currentSlide = ref(0);
 export function initTimelineSlider(setCurrentSlide) {
     $(".timeline-frame").on(
         "init reInit afterChange",
-        function(event, slick, currentSlide) {
+        function (event, slick, currentSlide) {
             setCurrentSlide(currentSlide || 0);
         }
     );
@@ -375,18 +376,18 @@ export function initTimelineSlider(setCurrentSlide) {
 // ==============================
 
 export const newsevents = ref([{
-        image: "./src/assets/home/excavator-action.png",
-        title: "Future of Work",
-        paragraph: "Majority of people will work in jobs that don’t exist today.",
-        date: "02 May",
+    image: "./src/assets/home/excavator-action.png",
+    title: "Future of Work",
+    paragraph: "Majority of people will work in jobs that don’t exist today.",
+    date: "02 May",
 
-    },
-    {
-        image: "./src/assets/home/high-rise.png",
-        title: "Future of Work",
-        paragraph: "Majority of people will work in jobs that don’t exist today.",
-        date: "02 May",
-    }
+},
+{
+    image: "./src/assets/home/high-rise.png",
+    title: "Future of Work",
+    paragraph: "Majority of people will work in jobs that don’t exist today.",
+    date: "02 May",
+}
 ])
 
 
@@ -406,76 +407,76 @@ export const followUs = ref([{
 // ==============================
 
 export const innerpageprojects = ref([{
-        title: "Royal Opera House Muscat",
-        imageUrl: "./src/assets/business/Royal-Opera.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+    title: "Royal Opera House Muscat",
+    imageUrl: "./src/assets/business/Royal-Opera.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Al Ameen Mosque Muscat, Oman",
-        imageUrl: "./src/assets/business/Al-Ameen.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Al Ameen Mosque Muscat, Oman",
+    imageUrl: "./src/assets/business/Al-Ameen.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: " National Bank of Oman Head Office Muscat",
-        imageUrl: "./src/assets/business/National-Bank.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: " National Bank of Oman Head Office Muscat",
+    imageUrl: "./src/assets/business/National-Bank.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Ominvest Project Muscat Hills, Oman ",
-        imageUrl: "./src/assets/business/Ominvest-Project.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Ominvest Project Muscat Hills, Oman ",
+    imageUrl: "./src/assets/business/Ominvest-Project.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Omantel Head Quarters Building Muscat",
-        imageUrl: "./src/assets/business/Omantel-Head.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Omantel Head Quarters Building Muscat",
+    imageUrl: "./src/assets/business/Omantel-Head.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Al Husn Village Roadworks, Oman",
-        imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Al Husn Village Roadworks, Oman",
+    imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Al Husn Village Roadworks, Oman",
-        imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Al Husn Village Roadworks, Oman",
+    imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Al Husn Village Roadworks, Oman",
-        imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Al Husn Village Roadworks, Oman",
+    imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Al Husn Village Roadworks, Oman",
-        imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Al Husn Village Roadworks, Oman",
+    imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Al Husn Village Roadworks, Oman",
-        imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Al Husn Village Roadworks, Oman",
+    imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Al Husn Village Roadworks, Oman",
-        imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
+{
+    title: "Al Husn Village Roadworks, Oman",
+    imageUrl: "./src/assets/business/Al-Husn.png", // Replace with your actual image URL
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 
-    },
-    {
-        title: "Al Husn Village Roadworks, Oman",
-        imageUrl: "./src/assets/business/Al-Husn.png",
-        flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-    },
+},
+{
+    title: "Al Husn Village Roadworks, Oman",
+    imageUrl: "./src/assets/business/Al-Husn.png",
+    flipContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+},
 ]);
 
 // ==============================
@@ -483,40 +484,40 @@ export const innerpageprojects = ref([{
 // ==============================
 
 export const facilitiescardsData = [{
-        icon: "./src/assets/business/card-icon.png",
-        title: "Lorem ipsum is placeholder text",
-        description: "Lorem ipsum is placLorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsumLorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsumeholder text commonly used in the graphic, print, and publishing industries for ",
-    },
-    {
-        icon: "./src/assets/business/card-icon.png",
-        title: "Lorem ipsum is placeholder text",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        icon: "./src/assets/business/card-icon.png",
-        title: "Lorem ipsum is placeholder text",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        icon: "./src/assets/business/card-icon.png",
-        title: "Lorem ipsum is placeholder text",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        icon: "./src/assets/business/card-icon.png",
-        title: "Lorem ipsum is placeholder text",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        icon: "./src/assets/business/card-icon.png",
-        title: "Lorem ipsum is placeholder text",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        icon: "./src/assets/business/card-icon.png",
-        title: "Lorem ipsum is placeholder text",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
+    icon: "./src/assets/business/card-icon.png",
+    title: "Lorem ipsum is placeholder text",
+    description: "Lorem ipsum is placLorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsumLorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsumeholder text commonly used in the graphic, print, and publishing industries for ",
+},
+{
+    icon: "./src/assets/business/card-icon.png",
+    title: "Lorem ipsum is placeholder text",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    icon: "./src/assets/business/card-icon.png",
+    title: "Lorem ipsum is placeholder text",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    icon: "./src/assets/business/card-icon.png",
+    title: "Lorem ipsum is placeholder text",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    icon: "./src/assets/business/card-icon.png",
+    title: "Lorem ipsum is placeholder text",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    icon: "./src/assets/business/card-icon.png",
+    title: "Lorem ipsum is placeholder text",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    icon: "./src/assets/business/card-icon.png",
+    title: "Lorem ipsum is placeholder text",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
 ];
 
 // ==============================
@@ -524,23 +525,23 @@ export const facilitiescardsData = [{
 // ==============================
 
 export const DivisionStrength = [{
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
-    {
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-    },
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
+{
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+},
 ];
 
 // ==============================
@@ -548,57 +549,57 @@ export const DivisionStrength = [{
 // ==============================
 
 export const menuItems = ref([{
-        name: "Business",
-        isOpen: false,
-        subItems: [
-            { name: "Business 1", isRouterLink: false },
-            { name: "Business 2", isRouterLink: false },
-            { name: "Business 3", isRouterLink: false },
-        ],
+    name: "Business",
+    isOpen: false,
+    subItems: [
+        { name: "Business 1", isRouterLink: false },
+        { name: "Business 2", isRouterLink: false },
+        { name: "Business 3", isRouterLink: false },
+    ],
+},
+{
+    name: "About Us",
+    isOpen: false,
+    subItems: [{
+        name: "About us",
+        isRouterLink: true,
+        link: { name: "AboutusPage" },
     },
-    {
-        name: "About Us",
-        isOpen: false,
-        subItems: [{
-                name: "About us",
-                isRouterLink: true,
-                link: { name: "AboutusPage" },
-            },
-            { name: "Leadership", isRouterLink: false },
-            { name: "Vision & Mission", isRouterLink: false },
-        ],
-    },
-    {
+    { name: "Leadership", isRouterLink: false },
+    { name: "Vision & Mission", isRouterLink: false },
+    ],
+},
+{
+    name: "Community",
+    isOpen: false,
+    subItems: [{
         name: "Community",
-        isOpen: false,
-        subItems: [{
-                name: "Community",
-                isRouterLink: true,
-                link: { name: "CommunityPage" },
-            },
-            { name: "CSR Activities", isRouterLink: false },
-            { name: "Partnerships", isRouterLink: false },
-        ],
+        isRouterLink: true,
+        link: { name: "CommunityPage" },
     },
-    {
+    { name: "CSR Activities", isRouterLink: false },
+    { name: "Partnerships", isRouterLink: false },
+    ],
+},
+{
+    name: "Newsroom",
+    isOpen: false,
+    subItems: [{
         name: "Newsroom",
-        isOpen: false,
-        subItems: [{
-                name: "Newsroom",
-                isRouterLink: true,
-                link: { name: "NewsRoomPage" },
-            },
-            { name: "Events", isRouterLink: false },
-            { name: "Media Gallery", isRouterLink: false },
-        ],
+        isRouterLink: true,
+        link: { name: "NewsRoomPage" },
     },
+    { name: "Events", isRouterLink: false },
+    { name: "Media Gallery", isRouterLink: false },
+    ],
+},
 
-    {
-        name: "Careers",
-    },
-    {
-        name: "Contact Us",
-    },
+{
+    name: "Careers",
+},
+{
+    name: "Contact Us",
+},
 ]);
 
 // ==============================
@@ -624,63 +625,63 @@ export const topbarcontactinfo = ref({
 // ==============================
 
 export const mobileMenuItems = ref([{
-        name: "Business",
-        isOpen: false,
-        subItems: [
-            { name: "Service 1", link: "#", isRouterLink: false },
-            { name: "Service 2", link: "#", isRouterLink: false },
-        ],
-    },
-    {
-        name: "About Us",
-        isOpen: false,
-        subItems: [
-            { name: "Our Story", link: "#", isRouterLink: false },
-            { name: "Team", link: "#", isRouterLink: false },
-        ],
-    },
-    {
-        name: "Newsroom",
-        isOpen: false,
-        subItems: [
-            { name: "Press Releases", link: "#", isRouterLink: false },
-            { name: "Media Coverage", link: "#", isRouterLink: false },
-        ],
-    },
-    {
-        name: "Community",
-        isOpen: false,
-        subItems: [
-            { name: "CSR", link: "#", isRouterLink: false },
-            { name: "Events", link: "#", isRouterLink: false },
-        ],
-    },
-    {
-        name: "Career",
-        isOpen: false,
-        subItems: [],
-        link: "#",
-        isRouterLink: false,
-    },
-    {
-        name: "Contact Us",
-        isOpen: false,
-        subItems: [],
-        link: "#",
-        isRouterLink: false,
-    },
+    name: "Business",
+    isOpen: false,
+    subItems: [
+        { name: "Service 1", link: "#", isRouterLink: false },
+        { name: "Service 2", link: "#", isRouterLink: false },
+    ],
+},
+{
+    name: "About Us",
+    isOpen: false,
+    subItems: [
+        { name: "Our Story", link: "#", isRouterLink: false },
+        { name: "Team", link: "#", isRouterLink: false },
+    ],
+},
+{
+    name: "Newsroom",
+    isOpen: false,
+    subItems: [
+        { name: "Press Releases", link: "#", isRouterLink: false },
+        { name: "Media Coverage", link: "#", isRouterLink: false },
+    ],
+},
+{
+    name: "Community",
+    isOpen: false,
+    subItems: [
+        { name: "CSR", link: "#", isRouterLink: false },
+        { name: "Events", link: "#", isRouterLink: false },
+    ],
+},
+{
+    name: "Career",
+    isOpen: false,
+    subItems: [],
+    link: "#",
+    isRouterLink: false,
+},
+{
+    name: "Contact Us",
+    isOpen: false,
+    subItems: [],
+    link: "#",
+    isRouterLink: false,
+},
 ]);
 
 export const mobilecontactInfo = ref([{
-        label: "HQ",
-        phone: "+96824214000",
-        display: "+968 2421 4000",
-    },
-    {
-        label: "Sales Enquiry",
-        phone: "+96826946666",
-        display: "+968 2694 6666",
-    },
+    label: "HQ",
+    phone: "+96824214000",
+    display: "+968 2421 4000",
+},
+{
+    label: "Sales Enquiry",
+    phone: "+96826946666",
+    display: "+968 2694 6666",
+},
 ]);
 
 export const mobilesocialLinks = ref([
@@ -789,35 +790,35 @@ export const countryvalue = ref({
 });
 
 export const corporatecard = ref([{
-        image: "./src/assets/community/educator.jpg",
-        title: "Education and Holistic Development",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
-        link: "#",
-    },
-    {
-        image: "./src/assets/community/livehoods.jpg",
-        title: "Livelihoods and Skill Development",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem placeholder text commonly used in the graphic, print, and publishing industries for Lorem placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
-        link: "#",
-    },
-    {
-        image: "./src/assets/community/rural.jpg",
-        title: "Rural Development",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
-        link: "#",
-    },
-    {
-        image: "./src/assets/community/water.jpg",
-        title: "Water and Sanitation",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
-        link: "#",
-    },
-    {
-        image: "./src/assets/community/healthcare.jpg",
-        title: "Healthcare Development",
-        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
-        link: "#",
-    },
+    image: "./src/assets/community/educator.jpg",
+    title: "Education and Holistic Development",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
+    link: "#",
+},
+{
+    image: "./src/assets/community/livehoods.jpg",
+    title: "Livelihoods and Skill Development",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem placeholder text commonly used in the graphic, print, and publishing industries for Lorem placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
+    link: "#",
+},
+{
+    image: "./src/assets/community/rural.jpg",
+    title: "Rural Development",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
+    link: "#",
+},
+{
+    image: "./src/assets/community/water.jpg",
+    title: "Water and Sanitation",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
+    link: "#",
+},
+{
+    image: "./src/assets/community/healthcare.jpg",
+    title: "Healthcare Development",
+    description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for Lorem ipsum ",
+    link: "#",
+},
 ]);
 
 // ==============================
@@ -834,82 +835,82 @@ export const newsroombanner = ref({
 });
 
 export const team = ref([{
-        name: "Dhiren Khimji",
-        title: "Executive Director",
-        image: "./src/assets/leaders/dhiren.png",
-    },
-    {
-        name: "Mohit Khimji",
-        title: "Executive Director",
-        image: "./src/assets/leaders/mohit.png",
-    },
-    {
-        name: "Farrokh J. Masani",
-        title: "Executive Director & CEO",
-        image: "./src/assets/leaders/farrok.png",
-    },
-    {
-        name: "Abdullah Al Jabri",
-        title: "Director & Deputy CEO",
-        image: "./src/assets/leaders/abdulla.png",
-    },
-    {
-        name: "Piyush Jain",
-        title: "Chief Finance Officer",
-        image: "./src/assets/leaders/piyush.png",
-    },
-    {
-        name: "Upali Marasinghe",
-        title: "Director - Commercial & Contracts",
-        image: "./src/assets/leaders/upalli.png",
-    },
+    name: "Dhiren Khimji",
+    title: "Executive Director",
+    image: "./src/assets/leaders/dhiren.png",
+},
+{
+    name: "Mohit Khimji",
+    title: "Executive Director",
+    image: "./src/assets/leaders/mohit.png",
+},
+{
+    name: "Farrokh J. Masani",
+    title: "Executive Director & CEO",
+    image: "./src/assets/leaders/farrok.png",
+},
+{
+    name: "Abdullah Al Jabri",
+    title: "Director & Deputy CEO",
+    image: "./src/assets/leaders/abdulla.png",
+},
+{
+    name: "Piyush Jain",
+    title: "Chief Finance Officer",
+    image: "./src/assets/leaders/piyush.png",
+},
+{
+    name: "Upali Marasinghe",
+    title: "Director - Commercial & Contracts",
+    image: "./src/assets/leaders/upalli.png",
+},
 ]);
 
 
 export const technologysection = ref({
     technology: [{
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            image: "./src/assets/about/embracing.jpg",
-        },
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        image: "./src/assets/about/embracing.jpg",
+    },
     ],
     healthcare: [{
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
-        },
-        {
-            image: "./src/assets/about/healthcare.jpg",
-        },
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries forLorem ipsum ",
+    },
+    {
+        image: "./src/assets/about/healthcare.jpg",
+    },
     ],
 
 });
