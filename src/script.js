@@ -20,7 +20,7 @@ export const slides = ref([{
         image: "/src/assets/home/engineers-working.jpg",
     },
 ]);
-export const currentSlide = ref(0);
+export const stateSlide = ref(0);
 
 // Function to go to the next slide
 export const nextSlide = () => {
@@ -281,6 +281,7 @@ export const timelinecard = [{
         title: "2021 — Growing Up",
         description: "Some description With determination With determination and a clear vision, the company expa and a clear vision, the company expaabout this year...",
         link: "#",
+        year:"1942"
     },
     {
         image: "./src/assets/home/beginning.png",
@@ -289,6 +290,7 @@ export const timelinecard = [{
         title: "2020 — The Beginning",
         description: "Some description about this year...",
         link: "#",
+        year:"2021"
     },
     {
         image: "./src/assets/home/beginning.png",
@@ -297,6 +299,7 @@ export const timelinecard = [{
         title: "2021 — Growing Up",
         description: "Some description about this year...",
         link: "#",
+        year:"2022"
     },
     {
         image: "./src/assets/home/beginning.png",
@@ -305,6 +308,7 @@ export const timelinecard = [{
         title: "2021 — Growing Up",
         description: "Some description about thWith determination and a clear vision, the company expaWith determination and a clear vision, the company expais year...",
         link: "#",
+        year:"2023"
     },
     {
         image: "./src/assets/home/palace.png",
@@ -313,14 +317,16 @@ export const timelinecard = [{
         title: "2021 — Growing Up",
         description: "Some description about this year...",
         link: "#",
+        year:"2024"
     },
-    {
+    { 
         image: "./src/assets/home/palace.png",
         overlayTitle: "Early Growth & Expansion",
         overlayparagraph: "With determination and With determination and a clear vision, the company expaWith determination and a clear vision, the company expaa clear vision, the company expanded...",
         title: "2021 — Growing Up",
         description: "Some description about this yeaWith determination and a clear vision, the company expaWith determination and a clear vision, the company expar...",
         link: "#",
+        year:"2024"
     },
     {
         image: "./src/assets/home/palace.png",
@@ -329,6 +335,7 @@ export const timelinecard = [{
         title: "2021 — Growing Up",
         description: "Some description about this yeaWith determination and a clear vision, the company expaWith determination and a clear vision, the company expar...",
         link: "#",
+        year:"2024"
     },
     {
         image: "./src/assets/home/palace.png",
@@ -337,8 +344,8 @@ export const timelinecard = [{
         title: "2021 — Growing Up",
         description: "Some description about this yWith determination and a clear vision, the company expaWith determination and a clear vision, the company expaear...",
         link: "#",
+        year:"2024"
     },
-    // Add more items as needed...
 ];
 
 // Timeline years data
@@ -351,7 +358,7 @@ export const timelineYears = ref([
     { year: "2024" },
     { year: "2024" },
 ]);
-
+export const currentSlide = ref(0);
 // Slider initialization function
 export function initTimelineSlider(setCurrentSlide) {
     $(".timeline-frame").on(

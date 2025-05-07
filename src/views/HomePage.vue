@@ -15,7 +15,8 @@
 
 
           <!-- Contact Info & Social -->
-          <div class="absolute top-0 right-0 flex items-center text-sm px-4 sm:px-6 lg:px-12 lg:pr-8 z-10 pr-3 xl:pr-[6rem]">
+          <div
+            class="absolute top-0 right-0 flex items-center text-sm px-4 sm:px-6 lg:px-12 lg:pr-8 z-10 pr-3 xl:pr-[6rem]">
             <div class="items-center gap-4 z-10 flex align-center text-center">
               <a :href="topbarcontactinfo.hqPhoneHref" class="font-light text-white ">
                 <span class="pr-2"><i class="bi bi-telephone-fill"></i></span>
@@ -65,32 +66,32 @@
             <!-- Right Side Icons -->
             <div class="max-w-7xl mx-auto mainbar-button flex items-center ml:10px; space-x-6">
               <div class="search-button">
-                                <!-- Toggle button -->
-                                <button @click="toggleSearch">
-                                    <i v-if="!isSearchOpen" class="bi bi-search text-xl"></i>
-                                    <!-- Search icon when closed -->
-                                    <i v-if="isSearchOpen" class="bi bi-x text-2xl"></i>
-                                    <!-- Close icon when search is open -->
-                                </button>
+                <!-- Toggle button -->
+                <button @click="toggleSearch">
+                  <i v-if="!isSearchOpen" class="bi bi-search text-xl"></i>
+                  <!-- Search icon when closed -->
+                  <i v-if="isSearchOpen" class="bi bi-x text-2xl"></i>
+                  <!-- Close icon when search is open -->
+                </button>
 
-                                <!-- Search input with smooth transition -->
-                                <div class="search-block">
-                                    <div :class="{ 'popup-search': true, 'open': isSearchOpen }"
-                                        class="popup-search-container">
-                                        <div class="relative w-64">
-                                            <input type="text"
-                                                class="bg-primarycolor pl-10 pr-4 py-2 rounded w-full text-white placeholder-white focus:outline-none border-b-2 border-text-textgray"
-                                                placeholder="Search..." />
-                                            <!-- Search Icon -->
-                                            <svg class="absolute left-3 top-1/2 -translate-y-1/2 transform w-5 h-5 text-white pointer-events-none"
-                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Search input with smooth transition -->
+                <div class="search-block">
+                  <div :class="{ 'popup-search': true, 'open': isSearchOpen }" class="popup-search-container">
+                    <div class="relative w-64">
+                      <input type="text"
+                        class="bg-primarycolor pl-10 pr-4 py-2 rounded w-full text-white placeholder-white focus:outline-none border-b-2 border-text-textgray"
+                        placeholder="Search..." />
+                      <!-- Search Icon -->
+                      <svg
+                        class="absolute left-3 top-1/2 -translate-y-1/2 transform w-5 h-5 text-white pointer-events-none"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
 
@@ -264,7 +265,8 @@
       <div id="animation-carousel" class="relative w-full h-[100vh] rounded-none" data-carousel="static">
         <!-- Carousel wrapper -->
         <div class="relative overflow-hidden rounded-lg h-[100vh]">
-          <div v-for="(slide, index) in slides" :key="index" class="main-banner-slider absolute inset-0 transition-opacity duration-500 "
+          <div v-for="(slide, index) in slides" :key="index"
+            class="main-banner-slider absolute inset-0 transition-opacity duration-500 "
             :class="{ 'opacity-100': currentSlide === index, 'opacity-0': currentSlide !== index }">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 via-15% to-transparent z-10"></div>
 
@@ -408,35 +410,19 @@
         <h2 class="main-heading text-white">Our Legacy</h2>
         <hr class="flex-grow border-t border-gray-300 ml-4 opacity-100" />
       </div>
-      <Carousel
-        ref="carouselRef"
-        :items-to-show="1"
-        :wrap-around="true"
-        :autoplay="true"
-        :autoplayTimeout="4000"
-        :transition="2500"
-        :mouse-drag="true"
-        :pauseAutoplayOnHover="true"
-        :wheelControl="true"
-        class="timeline-frame"
-      >
+      <Carousel v-model="stateSlide" ref="carouselRef" :items-to-show="1" :wrap-around="true" :autoplay="true"
+        :autoplayTimeout="4000" :transition="2500" :mouse-drag="true" :pauseAutoplayOnHover="true" :wheelControl="true"
+        class="timeline-frame">
         <Slide v-for="(item, index) in timelinecard" :key="index">
           <div class="relative timelinesub-card">
             <div class="timeline-sec block relative">
               <a href="#" class="block">
-                <img
-                  :src="item.image"
-                  :alt="item.title"
-                  class="!max-w-none object-cover xl:h-30 xl:w-30 rounded-lg mx-auto"
-                  loading="lazy"
-                />
+                <img :src="item.image" :alt="item.title"
+                  class="!max-w-none object-cover xl:h-30 xl:w-30 rounded-lg mx-auto" loading="lazy" />
                 <div class="overlay-content absolute inset-0 rounded-lg pr-9 pt-11 text-white">
-                  <!-- <h3 class="truncate font-bold text-white mb-4 text-lg">
-                    <b>{{ item.overlayTitle }}</b>
-                  </h3> -->
-                  <!-- <p class="border-l-2 border-orange-400 text-white pl-2">{{ item.overlayparagraph }}</p> -->
                   <div class="absolute bottom-6 right-0 mr-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                      viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -444,21 +430,38 @@
               </a>
             </div>
 
-            <div class="timeline-content">
-              <h3 class="mb-4 text-white">{{ item.overlayTitle }}</h3>
-              <p class="text-white font-[400] border-l-2 border-orange-400 pl-3 mb-10 pr-3">
+            <div
+              class="timeline-content w-full cursor-pointer bg-white rounded m-2 transition-all duration-300 ease-in-out hover:bg-primarycolor hover:shadow-lg hover:text-white group">
+              <h3 class="mb-4 text-primarycolor group-hover:text-white">{{ item.overlayTitle }}</h3>
+              <p
+                class="text-primarycolor font-[400] border-l-2 border-orange-400 pl-3 mb-10 pr-3 group-hover:text-white">
                 {{ item.overlayparagraph }}
               </p>
             </div>
 
             <div class="view-btn absolute bottom-6 right-0 mr-6">
-              <svg class="w-8 h-8 text-primarycolor" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-8 h-8 text-primarycolor group-hover:text-white transition-colors duration-300" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </div>
+
           </div>
         </Slide>
       </Carousel>
+      <div class="relative flex justify-between items-center mt-8 px-6">
+        <div class="absolute top-1/2 left-0 right-0 h-[2px] bg-gray-300 z-0"></div>
+        <div v-for="(yearItem, index) in timelineYears" :key="index" class="relative z-10 text-center">
+          <div class="w-4 h-4 rounded-full mx-2 transition-all duration-300"
+            :class="index === stateSlide ? 'bg-orange-600 scale-125' : 'bg-white'"></div>
+          <p class="text-sm mt-2 transition-colors duration-300"
+            :class="index === stateSlide ? 'text-orange-600 font-bold' : 'text-white'">
+            {{ yearItem.year }}
+          </p>
+        </div>
+      </div>
+
+
       <div class="flex justify-center gap-4 mb-6">
         <button @click="carouselRef?.prev()" class="text-white px-4 py-2  rounded">
           Prev
@@ -470,7 +473,7 @@
     </div>
   </div>
 
-  
+
 
 
 
@@ -581,7 +584,7 @@
                   <h3 class="text-xl font-bold py-4 text-white">
                     Royal Opera House Muscat
                   </h3>
-               
+
                   <a href="" class="text-sm mb-4">View Details</a>
 
                   <!-- Bottom Line -->
@@ -667,72 +670,72 @@
   <!-- FOOTER START -->
 
   <footer class="relative bg-white footer-sec">
-        <div class="max-w-10xl lg:mx-[4rem] px-2 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-0">
-            <!-- Logo -->
-            <div class="md:col-span-3 flex flex-col items-start">
-                <img :src="footerData.logoUrl" alt="Al Tasnim" class="w-40 lg:w-64 md:w-48 mb-6" />
-            </div>
+    <div class="max-w-10xl lg:mx-[4rem] px-2 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-0">
+      <!-- Logo -->
+      <div class="md:col-span-3 flex flex-col items-start">
+        <img :src="footerData.logoUrl" alt="Al Tasnim" class="w-40 lg:w-64 md:w-48 mb-6" />
+      </div>
 
-            <!-- Quick Links -->
-            <div class="md:col-span-3 xl:ml-20">
-                <h4 class="text-orange-500 font-semibold mb-2">Quick Links</h4>
-                <ul class="space-y-4 text-gray-700 text-sm pl-0">
-                    <li v-for="(link, index) in footerData.quickLinks" :key="index">
-                        <a :href="link.url" class="hover:text-orange-500 text-textdarkgray">{{ link.name }}</a>
-                    </li>
-                </ul>
-            </div>
+      <!-- Quick Links -->
+      <div class="md:col-span-3 xl:ml-20">
+        <h4 class="text-orange-500 font-semibold mb-2">Quick Links</h4>
+        <ul class="space-y-4 text-gray-700 text-sm pl-0">
+          <li v-for="(link, index) in footerData.quickLinks" :key="index">
+            <a :href="link.url" class="hover:text-orange-500 text-textdarkgray">{{ link.name }}</a>
+          </li>
+        </ul>
+      </div>
 
-            <!-- Help -->
-            <div class="md:col-span-6 xl:ml-20 follow-us">
-                <h4 class="text-orange-500 font-semibold mb-2">{{ footerData.helpTitle }}</h4>
-                <!-- Dynamic Help Title -->
-                <div class="flex flex-wrap gap-6 text-gray-700 text-sm mb-4 help-part">
-                    <a v-for="(link, index) in footerData.helpLinks" :key="index" :href="link.url"
-                        class="hover:text-orange-500 text-textdarkgray">
-                        {{ link.name }}
-                    </a>
-                </div>
-
-                <div class="border-t border-gray-400 mt-4 pt-4 flex flex-wrap justify-between items-center">
-                    <p class="text-gray-700 text-sm">{{ footerData.followTitle }}</p>
-                    <div class="flex gap-4">
-                        <a v-for="(social, index) in footerData.socialLinks" :key="index" :href="social.url"
-                            class="border border-secondary bg-secondary rounded-full ">
-                            <i :class="['bi', social.icon, 'text-white text-xl']"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact -->
-            <div class="md:col-span-12 md:col-start-4 xl:ml-20 mt-2">
-                <h4 class="text-orange-500 font-semibold mt-1 mb-2">{{ footerData.contactTitle }}</h4>
-                <!-- Dynamic Contact Title -->
-                <div class="border-t border-gray-400 pt-4 flex flex-wrap gap-8 xl:gap-[4rem] text-gray-700 text-sm">
-                    <div class="flex items-start gap-2 w-[249px]">
-                        <i class="bi bi-geo-alt text-orange-500 text-xl"></i>
-                        <p class="mb-0 text-textdarkgray">{{ footerData.contactInfo.address }}</p>
-                    </div>
-
-                    <div class="flex items-center gap-2">
-                        <i class="bi bi-telephone text-orange-500 text-xl"></i>
-                        <p class="mb-0 text-textdarkgray"><a :href="footerData.contactInfo.PhoneHref">{{
-                            footerData.contactInfo.phone }}</a></p>
-                    </div>
-
-                    <div class="flex items-center gap-2">
-                        <i class="bi bi-envelope text-orange-500 text-xl"></i>
-                        <p class="mb-0 text-textdarkgray">{{ footerData.contactInfo.email }}</p>
-                    </div>
-                </div>
-            </div>
+      <!-- Help -->
+      <div class="md:col-span-6 xl:ml-20 follow-us">
+        <h4 class="text-orange-500 font-semibold mb-2">{{ footerData.helpTitle }}</h4>
+        <!-- Dynamic Help Title -->
+        <div class="flex flex-wrap gap-6 text-gray-700 text-sm mb-4 help-part">
+          <a v-for="(link, index) in footerData.helpLinks" :key="index" :href="link.url"
+            class="hover:text-orange-500 text-textdarkgray">
+            {{ link.name }}
+          </a>
         </div>
 
-        <div class="border-t border-gray-300 text-center text-xs text-[#979797] py-4">
-            Copyright © 2024 Al Tasnim Group
+        <div class="border-t border-gray-400 mt-4 pt-4 flex flex-wrap justify-between items-center">
+          <p class="text-gray-700 text-sm">{{ footerData.followTitle }}</p>
+          <div class="flex gap-4">
+            <a v-for="(social, index) in footerData.socialLinks" :key="index" :href="social.url"
+              class="border border-secondary bg-secondary rounded-full ">
+              <i :class="['bi', social.icon, 'text-white text-xl']"></i>
+            </a>
+          </div>
         </div>
-    </footer>
+      </div>
+
+      <!-- Contact -->
+      <div class="md:col-span-12 md:col-start-4 xl:ml-20 mt-2">
+        <h4 class="text-orange-500 font-semibold mt-1 mb-2">{{ footerData.contactTitle }}</h4>
+        <!-- Dynamic Contact Title -->
+        <div class="border-t border-gray-400 pt-4 flex flex-wrap gap-8 xl:gap-[4rem] text-gray-700 text-sm">
+          <div class="flex items-start gap-2 w-[249px]">
+            <i class="bi bi-geo-alt text-orange-500 text-xl"></i>
+            <p class="mb-0 text-textdarkgray">{{ footerData.contactInfo.address }}</p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="bi bi-telephone text-orange-500 text-xl"></i>
+            <p class="mb-0 text-textdarkgray"><a :href="footerData.contactInfo.PhoneHref">{{
+              footerData.contactInfo.phone }}</a></p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="bi bi-envelope text-orange-500 text-xl"></i>
+            <p class="mb-0 text-textdarkgray">{{ footerData.contactInfo.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-300 text-center text-xs text-[#979797] py-4">
+      Copyright © 2024 Al Tasnim Group
+    </div>
+  </footer>
 
 
   <!-- FOOTER END -->
@@ -743,6 +746,7 @@ import { onMounted, onBeforeUnmount } from "vue";
 import {
   slides,
   currentSlide,
+  stateSlide,
   nextSlide,
   prevSlide,
   businesses,
@@ -852,7 +856,7 @@ const pauseBannerSlider = () => stopBannerAutoSlide();
 onMounted(() => {
   // initSlider();
 
-  window.scrollTo(0, 0); 
+  window.scrollTo(0, 0);
 });
 
 onBeforeUnmount(() => {
