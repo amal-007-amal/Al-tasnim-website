@@ -410,72 +410,58 @@
         <h2 class="main-heading text-white">Our Legacy</h2>
         <hr class="flex-grow border-t border-gray-300 ml-4 opacity-100" />
       </div>
-      <Carousel v-if="groupedTimelineCards.length > 0" v-model="stateSlide" ref="carouselRef" :items-to-show="1"
-        :wrap-around="true" :autoplay="true" :autoplayTimeout="4000" :transition="2500" :mouse-drag="true"
-        :pauseAutoplayOnHover="true" :wheelControl="true" class="timeline-frame max-w-full px-2 sm:px-4">
-        <Slide v-for="(group, index) in groupedTimelineCards" :key="index">
-          <div class="flex gap-8 w-full">
-            <!-- Left Card (60%) -->
-            <div v-if="group[0]" class="w-[70%]">
-              <div class="relative timelinesub-card">
-                <div class="timeline-sec block relative">
-                  <a href="#" class="block">
-                    <img :src="group[0].image" :alt="group[0].title" class="w-full object-cover rounded-lg mx-auto"
-                      loading="lazy" />
-                    <div class="overlay-content absolute inset-0 rounded-lg pr-4 pt-6 text-white">
-                      <div class="absolute bottom-4 right-4">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                          viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </div>
-                    </div>
-                  </a>
+      <Carousel v-model="stateSlide" :snap-align="'start'" ref="carouselRef" :items-to-show="2" :wrap-around="true" :autoplay="false"
+        :autoplayTimeout="6000" :transition="2500" :mouse-drag="true" :pauseAutoplayOnHover="true" :wheelControl="true"
+        :LeftMode="true" class="timeline-frame max-w-full px-2 sm:px-4">
+        <Slide v-for="(item, index) in timelinecard" :key="index">
+          <div class="flex flex-col lg:flex-row gap-0 items-stretch timelinesub-card">
+
+            <!-- Image Section -->
+            <!-- Image Section -->
+            <div class="relative flex-1 timeline-sec">
+              <a href="#" class="block relative h-full">
+                <img :src="item.image" :alt="item.title" class="timeline-image"
+                  :class="{ 'active-slide-img': index === stateSlide }" loading="lazy" />
+                <!-- Overlay for INACTIVE slides -->
+                <div v-if="index !== stateSlide"
+                  class="absolute inset-0 bg-black/60 flex items-center justify-center text-white text-center p-4">
+                  <div>
+                    <h3 class="text-lg font-bold">{{ item.overlayTitle }}</h3>
+                    <p class="text-sm mt-1">{{ item.overlayparagraph }}</p>
+                  </div>
                 </div>
-                <div
-                  class="timeline-content w-full cursor-pointer bg-white rounded m-2 transition-all duration-300 ease-in-out hover:bg-primarycolor hover:shadow-lg hover:text-white group p-4 sm:p-6">
-                  <h3 class="mb-2 text-base sm:text-lg text-primarycolor group-hover:text-white">
-                    {{ group[0].overlayTitle }}
-                  </h3>
-                  <p
-                    class="text-sm sm:text-base text-primarycolor font-[400] border-l-2 border-orange-400 pl-3 pr-3 mb-6 group-hover:text-white">
-                    {{ group[0].overlayparagraph }}
-                  </p>
-                </div>
-                <div class="view-btn absolute bottom-4 right-4">
-                  <svg
-                    class="w-6 h-6 sm:w-8 sm:h-8 text-primarycolor group-hover:text-white transition-colors duration-300"
-                    fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+
+                <!-- Optional: white arrow icon -->
+                <div class="absolute bottom-4 right-4 z-10">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
-              </div>
-            </div>
-            <!-- Right Card (40%) -->
-            <div v-if="group[1]" class="w-[25%]">
-              <div class="relative timelinesub-card">
-                <div class="timeline-sec block relative grayscale opacity-80">
-                  <a href="#" class="block">
-                    <!-- Image with specific width, height, and rounded corners -->
-                    <img :src="group[1].image" :alt="group[1].title"
-                      class="w-[100px] h-[50px] object-cover rounded-full mx-auto" loading="lazy" />
-
-                    <!-- Overlay content containing the paragraph text -->
-                    <div
-                      class="overlay-content left-4 absolute inset-0 rounded-lg pr-4 pt-6 text-white flex justify-center items-center">
-                      <!-- Overlay Paragraph -->
-                      <p class="text-center text-white bg-black bg-opacity-50 p-2 rounded-lg">
-                        {{ group[1].overlayparagraph }}
-                      </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
+              </a>
             </div>
 
 
+            <!-- Text Content Section (active slide) -->
+            <div v-if="index === stateSlide"
+              class="flex-1 bg-white p-4 sm:p-6 rounded-lg rounded-tl-none rounded-bl-none flex flex-col justify-between">
+              <div>
+                <h3 class="text-primarycolor text-lg font-bold">{{ item.overlayTitle }}</h3>
+                <p class="text-primarycolor text-sm mt-2">{{ item.overlayparagraph }}</p>
+              </div>
+
+              <!-- Arrow Button -->
+              <div class="mt-4 self-end">
+                <svg
+                  class="w-6 h-6 sm:w-8 sm:h-8 text-primarycolor group-hover:text-white transition-colors duration-300"
+                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
           </div>
         </Slide>
+
       </Carousel>
 
 

@@ -461,7 +461,6 @@ OUR BUSINESS
       .timelinesub-card {
         z-index: 100 !important;
         background-color: #ffffff;
-        border-radius: 14px;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         padding: 0px;
         display: flex;
@@ -645,7 +644,6 @@ OUR BUSINESS
     flex-direction: row;
     align-items: stretch;
     bottom: 9px;
-    border-radius: 14px;
     z-index: 0;
     @media (min-width: 1660px) {
       margin-left: 140px;
@@ -662,7 +660,8 @@ OUR BUSINESS
     img {
       width: 413px;
       height: 299px;
-      border-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
 
       object-fit: cover;
       @media (max-width: 1600px) {
