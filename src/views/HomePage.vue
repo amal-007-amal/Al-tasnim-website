@@ -410,9 +410,9 @@
         <h2 class="main-heading text-white">Our Legacy</h2>
         <hr class="flex-grow border-t border-gray-300 ml-4 opacity-100" />
       </div>
-      <Carousel v-model="stateSlide" :snap-align="'start'" ref="carouselRef" :items-to-show="2" :wrap-around="true" :autoplay="false"
-        :autoplayTimeout="6000" :transition="2500" :mouse-drag="true" :pauseAutoplayOnHover="true" :wheelControl="true"
-        :LeftMode="true" class="timeline-frame max-w-full px-2 sm:px-4">
+      <Carousel v-model="stateSlide" :snap-align="'start'" ref="carouselRef" :items-to-show="2" :wrap-around="true"
+        :autoplay="false" :autoplayTimeout="6000" :transition="2500" :mouse-drag="true" :pauseAutoplayOnHover="true"
+        :wheelControl="true" :LeftMode="true" class="timeline-frame max-w-full px-2 sm:px-4">
         <Slide v-for="(item, index) in timelinecard" :key="index">
           <div class="flex flex-col lg:flex-row gap-0 items-stretch timelinesub-card">
 
@@ -424,7 +424,7 @@
                   :class="{ 'active-slide-img': index === stateSlide }" loading="lazy" />
                 <!-- Overlay for INACTIVE slides -->
                 <div v-if="index !== stateSlide"
-                  class="absolute inset-0 bg-black/60 flex items-center justify-center text-white text-center p-4">
+                  class="absolute inset-0 bg-black/40 rounded-[0.6rem] rounded-tr-none rounded-br-none flex items-center justify-center text-white text-center p-4">
                   <div>
                     <h3 class="text-lg font-bold">{{ item.overlayTitle }}</h3>
                     <p class="text-sm mt-1">{{ item.overlayparagraph }}</p>
