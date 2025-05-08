@@ -275,7 +275,7 @@ export const projects = ref([{
 
 // Timeline cards data
 
-export const timelinecard = [{
+export const timelinecard = ref([{
     image: "./src/assets/home/palace.png",
     overlayTitle: "Early Growth & Expansion",
     overlayparagraph: "With determination and a clear vision, theWith determination and a clear vision, the company expa company expaWith determination and a clear vision, the company expanded...",
@@ -347,7 +347,7 @@ export const timelinecard = [{
     link: "#",
     year: "2024"
 },
-];
+]);
 
 // Timeline years data
 export const timelineYears = ref([

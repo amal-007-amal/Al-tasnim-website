@@ -410,55 +410,83 @@
         <h2 class="main-heading text-white">Our Legacy</h2>
         <hr class="flex-grow border-t border-gray-300 ml-4 opacity-100" />
       </div>
-      <Carousel v-model="stateSlide" ref="carouselRef" :items-to-show="1" :wrap-around="true" :autoplay="true"
-        :autoplayTimeout="4000" :transition="2500" :mouse-drag="true" :pauseAutoplayOnHover="true" :wheelControl="true"
-        class="timeline-frame max-w-full px-2 sm:px-4">
-        <Slide v-for="(item, index) in timelinecard" :key="index">
-          <div class="relative timelinesub-card">
-            <div class="timeline-sec block relative">
-              <a href="#" class="block">
-                <img :src="item.image" :alt="item.title"
-                  class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl object-cover rounded-lg mx-auto"
-                  loading="lazy" />
-                <div class="overlay-content absolute inset-0 rounded-lg pr-4 pt-6 text-white">
-                  <div class="absolute bottom-4 right-4">
-                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                      viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
+      <Carousel v-if="groupedTimelineCards.length > 0" v-model="stateSlide" ref="carouselRef" :items-to-show="1"
+        :wrap-around="true" :autoplay="true" :autoplayTimeout="4000" :transition="2500" :mouse-drag="true"
+        :pauseAutoplayOnHover="true" :wheelControl="true" class="timeline-frame max-w-full px-2 sm:px-4">
+        <Slide v-for="(group, index) in groupedTimelineCards" :key="index">
+          <div class="flex gap-8 w-full">
+            <!-- Left Card (60%) -->
+            <div v-if="group[0]" class="w-[70%]">
+              <div class="relative timelinesub-card">
+                <div class="timeline-sec block relative">
+                  <a href="#" class="block">
+                    <img :src="group[0].image" :alt="group[0].title" class="w-full object-cover rounded-lg mx-auto"
+                      loading="lazy" />
+                    <div class="overlay-content absolute inset-0 rounded-lg pr-4 pt-6 text-white">
+                      <div class="absolute bottom-4 right-4">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-              </a>
+                <div
+                  class="timeline-content w-full cursor-pointer bg-white rounded m-2 transition-all duration-300 ease-in-out hover:bg-primarycolor hover:shadow-lg hover:text-white group p-4 sm:p-6">
+                  <h3 class="mb-2 text-base sm:text-lg text-primarycolor group-hover:text-white">
+                    {{ group[0].overlayTitle }}
+                  </h3>
+                  <p
+                    class="text-sm sm:text-base text-primarycolor font-[400] border-l-2 border-orange-400 pl-3 pr-3 mb-6 group-hover:text-white">
+                    {{ group[0].overlayparagraph }}
+                  </p>
+                </div>
+                <div class="view-btn absolute bottom-4 right-4">
+                  <svg
+                    class="w-6 h-6 sm:w-8 sm:h-8 text-primarycolor group-hover:text-white transition-colors duration-300"
+                    fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!-- Right Card (40%) -->
+            <div v-if="group[1]" class="w-[25%]">
+              <div class="relative timelinesub-card">
+                <div class="timeline-sec block relative grayscale opacity-80">
+                  <a href="#" class="block">
+                    <!-- Image with specific width, height, and rounded corners -->
+                    <img :src="group[1].image" :alt="group[1].title"
+                      class="w-[100px] h-[50px] object-cover rounded-full mx-auto" loading="lazy" />
+
+                    <!-- Overlay content containing the paragraph text -->
+                    <div
+                      class="overlay-content left-4 absolute inset-0 rounded-lg pr-4 pt-6 text-white flex justify-center items-center">
+                      <!-- Overlay Paragraph -->
+                      <p class="text-center text-white bg-black bg-opacity-50 p-2 rounded-lg">
+                        {{ group[1].overlayparagraph }}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <!-- Content block -->
-            <div
-              class="timeline-content w-full cursor-pointer bg-white rounded m-2 transition-all duration-300 ease-in-out hover:bg-primarycolor hover:shadow-lg hover:text-white group p-4 sm:p-6">
-              <h3 class="mb-2 text-base sm:text-lg text-primarycolor group-hover:text-white">{{ item.overlayTitle }}
-              </h3>
-              <p
-                class="text-sm sm:text-base text-primarycolor font-[400] border-l-2 border-orange-400 pl-3 pr-3 mb-6 group-hover:text-white">
-                {{ item.overlayparagraph }}
-              </p>
-            </div>
 
-            <!-- Arrow Button -->
-            <div class="view-btn absolute bottom-4 right-4">
-              <svg class="w-6 h-6 sm:w-8 sm:h-8 text-primarycolor group-hover:text-white transition-colors duration-300"
-                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
           </div>
         </Slide>
       </Carousel>
+
 
       <div class="relative flex flex-wrap justify-between items-center mt-6 px-2 sm:px-6 gap-y-4">
         <div class="absolute top-1/2 left-0 right-0 h-[2px] bg-gray-300 z-0"></div>
 
         <div v-for="(yearItem, index) in timelineYears" :key="index"
           class="relative z-10 text-center flex flex-col items-center w-[14%] sm:w-auto"
-          @mouseenter="hoveredYearIndex = index" @mouseleave="hoveredYearIndex = null">
+          @mouseenter="hoveredYearIndex = index" @mouseleave="hoveredYearIndex = null" @click="stateSlide = index">
+          <!-- Add the click event here -->
+
           <div class="w-4 h-4 rounded-full mx-2 transition-all duration-300 border"
             :class="index === stateSlide ? 'bg-orange-600 scale-125' : 'bg-white border-gray-400'"></div>
 
@@ -759,7 +787,7 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount } from "vue";
+import { onMounted, onBeforeUnmount, computed } from "vue";
 import {
   slides,
   currentSlide,
@@ -810,7 +838,18 @@ const toggleDropdown = (index, isOpen) => {
 };
 const isTransitioning = ref(false);
 
+const groupedTimelineCards = computed(() => {
+  const cards = timelinecard.value;
+  const groups = [];
 
+  if (!Array.isArray(cards)) return groups;
+
+  for (let i = 0; i < cards.length; i += 2) {
+    groups.push([cards[i], cards[i + 1]]);
+  }
+
+  return groups;
+});
 
 // Banner auto-slide
 let bannerAutoSlideInterval;
